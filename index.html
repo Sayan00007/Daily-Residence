@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Residence</title>
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/676eaf438a.js" crossorigin="anonymous"></script>
+    <style data-inline-fonts>
+        /* vietnamese */
+        @font-face {
+            font-family: 'Muli';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/muli/v29/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk40eiNxw.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Muli';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/muli/v29/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk50eiNxw.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Muli';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/muli/v29/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk30eg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/quicksand/v31/6xKtdSZaM9iE8KbpRA_hJFQNYuDyP7bh.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/quicksand/v31/6xKtdSZaM9iE8KbpRA_hJVQNYuDyP7bh.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/quicksand/v31/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/quicksand/v31/6xKtdSZaM9iE8KbpRA_hJFQNYuDyP7bh.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/quicksand/v31/6xKtdSZaM9iE8KbpRA_hJVQNYuDyP7bh.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://img1.wsimg.com/gfonts/s/quicksand/v31/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            height: 500vh;
+            justify-self: center;
+            align-items: center;
+            font-family: Quicksand, sans-serif;
+            background-color: #ffffff;
+        }
+        .section{
+            margin: 0;
+            padding: 0%;
+            height: 81vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slider{
+            width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .slide{
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+        .slide input{
+            display: none;
+        }
+        .st{
+            width: 20%;
+            transition: 2s;
+        }
+        .st img{
+            width: 800px;
+            height: 500px;
+        }
+        .nav-m{
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            justify-content: center;
+            display: flex;
+        }
+        .m-btn{
+            border: 2px solid #879094;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .m-btn:not(:last-child){
+            margin-right: 20px;
+        }
+        .m-btn:hover{
+            background-color: #333333;
+        }
+        #radio1:checked ~.first{
+            margin-left: 0;
+        }
+        #radio2:checked ~.first{
+            margin-left: -20%;
+        }
+        #radio3:checked ~.first{
+            margin-left: -40%;
+        }
+        #radio4:checked ~.first{
+            margin-left: -60%;
+        }
+        #radio5:checked ~.first{
+            margin-left: -80%;
+        }
+        #radio6:checked ~.first{
+            margin-left: -100%;
+        }
+        
+        .nav-auto{
+            position: absolute;
+            width: 800px;
+            margin-top: 460px;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-auto div{
+            border: 2px solid #23e3c2;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+        }
+        .nav-auto div:not(:last-child){
+            margin-right: 20px;
+            justify-content: center;
+        }
+        header{
+            min-height: 108vh;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            background-size: cover;
+        }
+        #heading1{
+            color: #9a9a9a;
+            padding-top: 2.1vh;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+
+        .bottom{
+        position:relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        z-index: 2;
+        }
+        .footer{
+        position:relative;
+        width: 100%;
+        background: #333333;
+        min-height: 150px;
+        z-index: 2;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+.footer .social_icon,
+.footer .menu{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px 0;
+}
+.footer .social_icon li,
+.footer .menu li {
+    list-style: none;
+}
+.footer .social_icon li a
+{
+    font-size: 3em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+.footer .social_icon li a:hover{
+    transform: translateY(-10px);
+}
+.footer .menu li a{
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+
+}
+.footer .menu li a:hover{
+    opacity: 1;
+}
+.footer p{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+
+}
+.footer .wave{
+    position: absolute;
+    top: -100px;;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(Image/Untitled12_20230509234036.png);
+    background-size: 1000px 100px;
+
+}
+.footer .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+.footer .wave#wave2{
+    z-index: 999;
+    opacity: .5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+.footer .wave#wave3{
+    z-index: 1000;
+    opacity: .2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+.footer .wave#wave4{
+    z-index: 999;
+    opacity: .7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+@keyframes animateWave{
+    0%
+    {
+        background-position-x: 1000px;
+    }
+    100%
+    {
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWave_02{
+    0%
+    {
+        background-position-x: 0px;
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+}
+#buttonlast{
+    padding-top: 100px;
+}
+.headingbuttom{
+    background: #9ba3a6;
+    height: 35vh;
+}
+.headingtop{
+    background: #333333;
+    height: 8vh;
+
+}
+.headingbuttom a{
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 14px;
+    background-color: transparent;
+    height: 40px;
+    padding-top: 16px;
+    border: 1.3px solid rgb(0, 0, 0);
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    font-family: Quicksand, sans-serif;
+    top: 10px;
+}
+.signup{
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 14px;
+    background-color: transparent;
+    height: 35px;
+    width: 10vw;
+    padding-top: 16px;
+    border: 1.3px solid rgb(0, 0, 0);
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    font-family: Quicksand, sans-serif;
+}
+.input{
+    width: 65vw;
+    height: 35px;
+    margin: 30px 6vw 0px 10vw;
+    padding-top: 8px;
+    padding-bottom: 7px;
+}
+.headingbuttom a:hover{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    border-radius: 5px;
+}
+#headingimg{
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(Image/rs=w_1279\,m.webp);
+}
+
+h3{
+    font-size: 45px;
+    letter-spacing:0.023em ;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: 'Muli','sans-serif' ;
+}
+footer{
+    position: sticky;
+    top: 100%;
+}
+/* Main section styling */
+.about_section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px 50px 100px;
+    display: flex;
+    align-items: center;
+}
+.image_section{
+    width: 54%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.about_img{
+    width: 100vh;
+    height: 65vh;
+    object-fit: cover;
+    object-position: center;
+}
+.content_section{
+    position: absolute;
+    width: 30%;
+    height: auto;
+    border-radius: 4px;
+    right: 300px;
+    background: var(--fourth);
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+    row-gap: 1.1rem;
+    padding: 30px 30px 30px 120px;
+    box-shadow: 5px 5px 10px rgba(68, 27, 5, 0.12);
+    border: 1px solid rgba(143, 143, 143);
+}
+.about_title{
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: var(--primary);
+}
+.about_desc{
+    font-size: 0.93rem;
+    line-height: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1.3rem;
+}
+.about_btn{
+    border-radius: 4px !important;
+    margin-bottom: 1.3rem;
+}
+
+
+.section1{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.section1 h6{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.section1 p{
+    margin-top: 0;
+}
+:root{
+    --fourth : #a7a7a7;
+    --secondary : #1c1c1c;
+    --tertiary: #f4f4f4;
+    --primary: #333333;
+}
+.btn{
+    height: 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+.bg_btn{
+    width: 200px;
+    background: transparent;
+    border: 1.3px solid var(--secondary);
+    color: var(--secondary);
+    border-radius: 5px;
+    transition: 0.68 ease-out;
+}
+.bg_btn:hover{
+    background: var(--secondary);
+    border: 1.3px solid var(--secondary);
+    color: var(--tertiary);
+}
+.divider{
+    background: var(--fourth);
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.tag_section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.tag_center{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.tag_title{
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--primary);
+    letter-spacing: 0.1rem;
+    margin-bottom: 0rem;
+}
+.tag_indicator{
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+.line{
+    width: 90px;
+    height: 2px;
+    background: var(--secondary);
+}
+.circle{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--secondary);
+    margin-left: -0.2rem;
+    box-shadow: 0px 0px 8px rgb(0, 0, 0, 1);
+}
+h4{
+    margin-bottom: 0;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 2;
+    color: rgb(89, 89, 89);
+}
+*{
+    scroll-behavior: smooth;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- This is Top of heading -->
+        <div class="headingtop">
+            <center><h2 id="heading1"><span>DAILY RESIDENCE</span></h2></center>
+        </div>
+        <div id="headingimg">
+        </div>
+        <!-- This is buttom of heading -->
+        <div class="headingbuttom">
+            <center style="height: 100%;width: 100%;">
+                <h3 style="margin-top: 0%;padding-top: 5vh;margin-bottom: 0%;"><span>Discover Your Next Adventure</span></h3>
+                <p style="margin-top: 10px;margin-bottom: 10px;"><span>Explore a world of stories at Daily Residence</span></p>
+                <a href="/home.html">- SHOP NOW -</a>
+            </center>
+        </div>
+    </header>
+    <main>
+        <!--Main Section 1 -->
+        <section class="section1" id="Services">
+            <center><h4><span>WELCOME TO DAILY RESIDENCE</span></h4></center>
+            <!-- Article 1 -->
+            <div class="about_section">
+                <div class="image_section">
+                    <img src="/Image/3.webp" alt="Our Misson" class="about_img">
+                </div>
+                <div class="content_section">
+                    <div class="tag_section">
+                        <h6 class="tag_title">Our Misson</h6>
+                        <div class="tag_indicator">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                    <h6 class="about_title">
+                        Reading is Accessible to Everyone.
+                    </h6>
+                    <p class="about_desc">
+                        At Daily residence, our mission is to provide a welcoming and inclusive space for all book lovers. We believe that everyone deserves access to literature and aim to make reading accessible to everyone.
+                    </p>
+                    <button class="btn about_btn bg_btn">
+                        Know More
+                    </button>
+                </div>
+            </div>
+            <!-- Article 2 -->
+            <div class="about_section" 
+            style="
+            flex-direction: row-reverse;
+            width: 86vw;
+            ">
+                <div class="image_section">
+                    <img src="/Image/1.webp" alt="Our Services" class="about_img">
+                </div>
+                <div class="content_section" style="left: 100px; width: 35%;" >
+                    <div class="tag_section">
+                        <h6 class="tag_title">Our Services</h6>
+                        <div class="tag_indicator">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                    <h6 class="about_title">
+                        Enhanceing Your Reading Experience.
+                    </h6>
+                    <p class="about_desc">
+                        We offer a range of services to enhance your reading experience, including special orders, gift wrapping, and personalized recommendations. Our knowledgeable staff are always happy to help you find your next favorite book.
+                    </p>
+                    <button class="btn about_btn bg_btn">
+                        Know More
+                    </button>
+                </div>
+            </div>
+            <!-- Article 3 -->
+            <div class="about_section">
+                <div class="image_section">
+                    <img src="/Image/2.webp" alt="Our Community" class="about_img">
+                </div>
+                <div class="content_section">
+                    <div class="tag_section">
+                        <h6 class="tag_title">Our Community</h6>
+                        <div class="tag_indicator">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                    <h6 class="about_title">
+                        Bookclubs,Events,Giveways and many more.
+                    </h6>
+                    <p class="about_desc">
+                        At Daily residence, we believe in the power of community. We regularly host book clubs, author events, and other literary gatherings to bring book lovers together. Join our community and connect with fellow readers.
+                    </p>
+                    <button class="btn about_btn bg_btn">
+                        Know More
+                    </button>
+                </div>
+            </div>
+            <hr class="divider">
+        </section>
+        <!--Main Section 2 -->
+        <section style="background: #9ba3a6;">
+            <center>
+                <h4 style="
+                    margin-top: 50px;
+                    padding-top: 50px;
+                    font-size: 30px;
+                    "><span>A VISUAL TOUR OF DAILY RESIDENCE BOOKS,COFFEE,AND MORE</span></h4>
+                <!-- Part 1[Image Gallery] -->
+                <section class="section">
+                    <div class="slider">
+                        <div class="slide">
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                            <input type="radio" name="radio-btn" id="radio5">
+                            <input type="radio" name="radio-btn" id="radio6">
+
+                            <div class="st first">
+                                <img src="/Image/1.webp" alt="">
+                            </div>
+
+                            <div class="st">
+                                <img src="/Image/2.webp" alt="">
+                            </div>
+
+                            <div class="st">
+                                <img src="/Image/3.webp" alt="">
+                            </div>
+
+                            <div class="st">
+                                <img src="/Image/4.jpeg" alt="">
+                            </div>
+
+                            <div class="st">
+                                <img src="/Image/5.jpeg" alt="">
+                            </div>
+
+                            <div class="st">
+                                <img src="/Image/6.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="nav-m">
+                            <label for="radio1" class="m-btn"></label>
+                            <label for="radio2" class="m-btn"></label>
+                            <label for="radio3" class="m-btn"></label>
+                            <label for="radio4" class="m-btn"></label>
+                            <label for="radio5" class="m-btn"></label>
+                            <label for="radio6" class="m-btn"></label>
+                        </div>
+                    </div>
+                </section>
+                <!-- Part 2[Preview of Images] -->
+                <section>
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </section>
+            </center>
+        </section>
+    </main>
+    <footer>
+        <!-- Top Section of Footer -->
+        <section>
+            <CENter>
+                <h4><span>CONTACT US</span></h4>
+                <h5>Get in touch!</h5>
+                <p><span>Looking for something special? Have a question? Let us know, and we'll get back to you soon.</span></p>
+                <h5>Daily Residence</h5>
+                <hr>
+            </CENter>
+        </section>
+        <!-- Middle Section of Footer -->
+        <section style="height: 200px;">
+            <!-- Email entry and signup button -->
+            <center><h4 style="margin: 0%;"><span>Join Our Mailing List</span></h4></center>
+            <span>
+                <!-- Email entry -->
+                <input type="email" class="input" placeholder="Email"><a href="Login.html" class="signup">- signup -</a>
+            </span>
+            <span>
+                <!-- signup button -->
+            </span>
+        </section>
+        <!-- Buttom Section of Footer -->
+        <section id="buttonlast">
+            <div class="bottom">
+                <section class="footer">
+                    <div class="waves">
+                        <div class="wave" id="wave1"></div>
+                        <div class="wave" id="wave2"></div>
+                        <div class="wave" id="wave3"></div>
+                        <div class="wave" id="wave4"></div>
+                    </div>
+                    <ul class="social_icon">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                    <ul class="menu">
+                        <li><a href="/Faq.html">FAQ</a></li>
+                        <li><a href="/home.html#About">About Us</a></li>
+                        <li><a href="/index.html#Services">Services</a></li>
+                        <li><a href="Credits/Credits.html">Credits</a></li>
+                        <li><a href="/Terms_&_service.html">Terms & Conditions</a></li>
+                    </ul>
+                    <p>©️2023 Daily Residence |All Rights Reserved</p>
+                </section>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
