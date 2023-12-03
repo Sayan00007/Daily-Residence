@@ -1,0 +1,337 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    overflow:hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.flex-box{
+    display: flex;
+    width: 1000px;
+    margin: 20px auto;
+}
+.left{
+    width: 40%;
+}
+.big-img{
+    width: 250px;
+}
+.big-img img{
+    width: inherit;
+}
+.big-img2{
+    width: 250px;
+}
+.big-img2 img{
+    width: inherit;
+}
+.images{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 15px;
+}
+.small-img{
+    width: 50px;
+    overflow: hidden;
+    border: 1.5px solid black;
+}
+.small-img img{
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.small-img:hover img{
+    transform: scale(1.2);
+}
+.url{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(0, 102, 255);
+}
+.pname{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.ratings i{
+    color: rgb(255, 136, 0);
+}
+.price{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.size{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.size p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.psize{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #ff5e00;
+    color: #000;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.psize.active{
+    border-width: 1.5px;
+    color: #ff5e00;
+    font-weight: 500;
+}
+.quantity{
+    display: flex;
+}
+.quantity p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.quantity input{
+    width: 40px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 15px;
+}
+.btn-box{
+    display: flex;
+    margin-top: 40px;
+}
+.btn-box button{
+    font-size: 18px;
+    padding: 8px 25px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+.cart-btn{
+    background-color: #ff5e00;
+    margin-right: 20px;
+}
+.buy-btn{
+    background-color: #00aeff;
+}
+.cart-btn:hover{
+    background-color: #ff3c00;
+}
+.buy-btn:hover{
+    background-color: #0066ff;
+}
+
+section{
+    width: 100%;
+    background-image: url(Image/bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+section nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 10px #089da1;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    z-index: 100;
+}
+
+section nav .logo img{
+    width: 100px;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+section nav ul{
+    list-style: none;
+}
+
+section nav li{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+section nav li a{
+    text-decoration: none;
+    color: #000;
+}
+
+section nav li a:hover{
+    color: #089da1;
+}
+
+section nav .social_icon i{
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+section nav .social_icon i:hover{
+    color: #089da1;
+    cursor: pointer;
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <section>
+    <nav>
+        <div class="logo">
+            <img src="Image/logo.png">
+        </div>
+        <a href="index.html" style="text-decoration: none; color: black;"><h2>DAILY RESIDENCE</h2></a>
+        <ul>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Featured">Featured</a></li>
+            <li><a href="#Arrivals">Arrivals</a></li>
+            <li><a href="#Reviews">Reviews</a></li>
+            <li><a href="#Blog">Blog</a></li>
+        </ul>
+
+        <div class="social_icon">
+            <a href="cart page.html" style="color: #1D3050;"><i class="fas fa-shopping-cart"></i></a>
+            <a href="Profile.html" style="color: #1D3050;"><i class="fas fa-user"></i></a>
+        </div>
+
+    </nav>
+
+    <div class="flex-box" style="margin-top: 0%;padding-top: 20vh;">
+        <div class="left">
+            <div class="big-img">
+                <img src="Image/book_1.jpg">
+            </div>
+            <div class="images">
+                <div class="small-img">
+                    <img src="Image/book_1.jpg" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="Image/book_2.jpg" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="Image/book_3.jpg" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="Image/book_4.jpg" onclick="showImg(this.src)">
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="url">Home > Featured > Books</div>
+            <div class="pname">COCOGOOSE</div>
+            <div class="ratings">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price">₹599--₹1899</div>
+            <div class="size">
+                <p>Size :</p>
+                <div class="psize active">A6</div>
+                <div class="psize">A5</div>
+                <div class="psize">A4</div>
+            </div>
+            <div class="quantity">
+                <p>Quantity :</p>
+                <input type="number" min="1" max="5" value="1">
+            </div>
+            <div class="btn-box">
+                <a href="cart page.html">
+                    <button class="cart-btn">Add to Cart</button>
+                </a>
+                <a href="payment.html">
+                    <button class="buy-btn">Buy Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-box" style="margin-top: 0%;padding-top: 20vh; padding-bottom: 20vh;" id="2">
+        <div class="left">
+            <div class="big-img2">
+                <img src="Image/book_5.jpg">
+            </div>
+            <div class="images">
+                <div class="small-img">
+                    <img src="Image/book_5.jpg" onclick="showImg2(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="Image/book_6.jpg" onclick="showImg2(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="Image/book_7.png" onclick="showImg2(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="Image/book_8.png" onclick="showImg2(this.src)">
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="url">Home > Featured > Books</div>
+            <div class="pname">COCOGOOSE</div>
+            <div class="ratings">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price">₹599--₹1899</div>
+            <div class="size">
+                <p>Size :</p>
+                <div class="psize active">A6</div>
+                <div class="psize">A5</div>
+                <div class="psize">A4</div>
+            </div>
+            <div class="quantity">
+                <p>Quantity :</p>
+                <input type="number" min="1" max="5" value="1">
+            </div>
+            <div class="btn-box">
+                <a href="cart page.html">
+                    <button class="cart-btn">Add to Cart</button>
+                </a>
+                <a href="payment.html">
+                    <button class="buy-btn">Buy Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+        let bigImg = document.querySelector('.big-img img');
+        function showImg(pic){
+            bigImg.src = pic;
+        }
+        let bigImg2 = document.querySelector('.big-img2 img');
+        function showImg2(pic){
+            bigImg2.src = pic;
+        }
+    </script>
+</body>
+</html>
